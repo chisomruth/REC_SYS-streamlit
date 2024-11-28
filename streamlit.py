@@ -14,7 +14,7 @@ load_dotenv('credentials.env')
 api_key = os.getenv("GOOGLE_API_KEY")
 
 # Load the dataset
-df = pd.read_csv(r"C:\Users\chiso\Downloads\cleaned_health_data.csv")
+df = pd.read_csv(r"cleaned_health_data.csv")
 
 # Ensure latitude and longitude are numeric
 df['latitude'] = pd.to_numeric(df['latitude'], errors='coerce')
@@ -156,6 +156,7 @@ if st.button("🔍 Find Hospitals"):
                     st.pydeck_chart(hospital_map)
     else:
         st.error("❌ Please enter your address.")
+
 
 # Add a footer
 st.markdown("---")
